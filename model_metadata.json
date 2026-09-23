@@ -1,0 +1,43 @@
+{
+    "model": "PyTorch MLP",
+    "input_features": [
+        "mH",
+        "mA",
+        "mHp",
+        "l2",
+        "l345"
+    ],
+    "target_columns": [
+        "Tcrit",
+        "Tnuc",
+        "log_alpha",
+        "log_beta/H"
+    ],
+    "physical_targets": [
+        "Tcrit",
+        "Tnuc",
+        "alpha",
+        "beta/H"
+    ],
+    "log_transform": {
+        "alpha": "log10(alpha)",
+        "beta/H": "log10(beta/H)"
+    },
+    "architecture": [
+        "Linear(5, 64)",
+        "ReLU",
+        "Linear(64, 64)",
+        "ReLU",
+        "Linear(64, 32)",
+        "ReLU",
+        "Linear(32, 4)"
+    ],
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "batch_size": 512,
+    "epochs": 300,
+    "seed": 42,
+    "training_sample": "one-step FOPT transition_pattern == 'oh1'",
+    "training_events": 50297
+}
