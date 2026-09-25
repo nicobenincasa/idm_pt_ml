@@ -39,5 +39,27 @@
     "epochs": 300,
     "seed": 42,
     "training_sample": "one-step FOPT transition_pattern == 'oh1'",
-    "training_events": 50297
+    "training_events": 50297,
+    "feature_ranges": {
+        "mH": {
+            "min": 46.266962,
+            "max": 249.999661
+        },
+        "mA": {
+            "min": 46.398863,
+            "max": 499.907029
+        },
+        "mHp": {
+            "min": 70.40915,
+            "max": 530.183763
+        },
+        "l2": {
+            "min": 0.000112,
+            "max": 4.161707
+        },
+        "l345": {
+            "min": 3e-05,
+            "max": 2.713783
+        }
+    }
 }
